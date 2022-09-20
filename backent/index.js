@@ -19,3 +19,7 @@ const Storage = multer.diskStorage({
           cb(null, file.originalname)
     }
 });
+
+app.listen(8080, () => {
+    console.log('server running on port 8080');
+});
