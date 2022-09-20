@@ -8,11 +8,12 @@ const { response } = require("express");
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/Productdatas').then(() => {   
+mongoose.connect('mongodb://localhost:27017/Productdatas')
+.then(() => {   
     console.log('database connected')
 });
 
-const xlsStorage = multer.diskStorage({
+const Storage = multer.diskStorage({
     destination: 'uploads', 
       filename: (req, file, cb) => {
           cb(null, file.originalname)
